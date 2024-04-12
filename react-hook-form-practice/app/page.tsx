@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 interface IForm {
-  work: string;
-  goal: string;
+  department: string;
+  join: string;
   salary: string;
   intro: string;
   dreams: string;
@@ -22,24 +22,24 @@ export default function Home() {
   const [show, setShow] = useState(false);
   const [data, setData] = useState<IForm | undefined>();
 
-  const onValid = (formData: IForm) => {
-    setData(formData);
-    setShow(true);
-    reset();
-  };
+  // const onValid = (formData: IForm) => {
+  //   setData(formData);
+  //   setShow(true);
+  //   reset();
+  // };
 
-  const onInValid = (errors: string) => {
-    console.log(errors);
-  };
+  // const onInValid = (errors: string) => {
+  //   console.log(errors);
+  // };
 
-  const onClick = () => {
-    setShow(false);
-  };
+  // const onClick = () => {
+  //   setShow(false);
+  // };
 
   return (
     <div className="flex flex-col justify-center items-center">
       <form
-        onSubmit={handleSubmit(onValid, onInValid)}
+        // onSubmit={handleSubmit(onValid, onInValid)}
         className="flex flex-col gap-4 px-4 py-1 border border-gray-300 rounded-lg shadow-md w-[500px] bg-cyan-100 border-r-4 border-b-4"
       >
         <h1 className="text-4xl font-bold text-center my-2">안뇽</h1>
@@ -51,7 +51,7 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="Sales"
+                id="departmentChoice1"
                 value="Sales"
                 {...register("department")}
               />
@@ -62,7 +62,7 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="Marketing"
+                id="departmentChoice2"
                 value="Marketing"
                 {...register("department")}
               />
@@ -73,7 +73,7 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="Accounting"
+                id="departmentChoice3"
                 value="Accounting"
                 {...register("department")}
               />
@@ -84,7 +84,7 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="CustomerService"
+                id="departmentChoice4"
                 value="CustomerService"
                 {...register("department")}
               />
@@ -102,9 +102,9 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="money"
+                id="joinChoice1"
                 value="Money"
-                {...register("department")}
+                {...register("join")}
               />
               <label className="ml-2" htmlFor="Money">
                 I want money!
@@ -113,9 +113,9 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="company"
+                id="joinChoice2"
                 value="Company"
-                {...register("department")}
+                {...register("join")}
               />
               <label className="ml-2" htmlFor="Company">
                 I love this company
@@ -124,9 +124,9 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="learn"
+                id="joinChoice3"
                 value="learn"
-                {...register("department")}
+                {...register("join")}
               />
               <label className="ml-2" htmlFor="learn">
                 I want to learn
@@ -135,9 +135,9 @@ export default function Home() {
             <div>
               <input
                 type="radio"
-                id="know_why"
+                id="joinChoice4"
                 value="know_why"
-                {...register("department")}
+                {...register("join")}
               />
               <label className="ml-2" htmlFor="know_why">
                 I dont know why
